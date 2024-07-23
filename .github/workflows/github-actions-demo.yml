@@ -28,6 +28,6 @@ jobs:
         with:
           publish_dir: ./out
           target_branch: gh-pages
-          deploy_key: ${{ secrets.ACCESS_TOKEN }}
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
 
 
