@@ -5,7 +5,7 @@ on:
     branches:
       - main
 jobs:
-  Install & Build:
+  Install_Build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
