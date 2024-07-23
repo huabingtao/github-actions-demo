@@ -27,7 +27,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./out
-        env: 
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          target_branch: gh-pages
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
 
 
