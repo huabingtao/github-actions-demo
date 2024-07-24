@@ -5,11 +5,11 @@ on:
     branches:
       - main
 jobs:
-  Install_Build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  Install_Build: # ‘Install_Build’是一个自定义的工作的id<job_id>
+    runs-on: ubuntu-latest  # 因为工作实际是运行在虚拟机上的，runs-on就是指定虚拟机的版本
+    steps: # steps是步骤的集合
+      - name: Checkout # 当前工作的名称 每个用‘-’代替缩进视为一个步骤的开始
+        uses: actions/checkout@v4 # uses字段是选择一个可以直接复用的action，并且在github action store中的action可以直接使用，不需要下载
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with: 
@@ -17,7 +17,7 @@ jobs:
           run_install: false
       - name: Install Node
         uses: actions/setup-node@v4
-        with:
+        with: # 为‘uses’使用的action传递参数
           node-version: 20
       - name: Install dependencies
         run: pnpm install
